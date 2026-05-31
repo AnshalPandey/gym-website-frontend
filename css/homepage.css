@@ -1,0 +1,200 @@
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body{
+        color: white;
+        background: url('../IMAGES FOR GYM WEBSITE/danielle-cerullo-CQfNt66ttZM-unsplash.jpg') center/cover no-repeat;
+        min-height: 100vh;
+    }
+
+    /* ✅ Premium Navbar */
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 8%;
+        background: rgba(0,0,0,0.45);
+        backdrop-filter: blur(9px);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        transition: 0.3s ease-in-out;
+    }
+    header:hover{
+        background: rgba(0,0,0,0.65);
+    }
+
+    .logo img{
+        height: 58px;
+        filter: invert(1);
+        transition: 0.3s;
+    }
+
+    .logo:hover img{
+        transform: scale(1.08);
+    }
+
+    nav ul{
+        list-style: none;
+        display: flex;
+        gap: 35px;
+    }
+
+    nav ul li{
+        position: relative;
+    }
+
+    nav ul li a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 10px;
+        transition: 0.4s ease-in-out;
+    }
+
+    /* Animated underline */
+    nav ul li a::after{
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 3px;
+        left: 0;
+        bottom: -3px;
+        background: #ffcc00;
+        transition: width 0.3s ease;
+    }
+    nav ul li a:hover::after{
+        width: 100%;
+    }
+    nav ul li a:hover{
+        color: #ffcc00;
+    }
+
+    /* Login Button */
+    .btn{
+        background: linear-gradient(90deg, #d60000, #ff4747);
+        border: none;
+        padding: 10px 22px;
+        border-radius: 35px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        color:white;
+        transition: 0.3s;
+    }
+    .btn:hover{
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0px 6px 15px rgba(255,0,0,0.7);
+    }
+
+    /* ✅ Hero (Your original body preserved) */
+    .hero{
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding-top: 70px;
+        background: rgba(0,0,0,0.5);
+    }
+    .hero h1{
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: uppercase;
+        animation: slideDown 1s ease forwards;
+    }
+    @keyframes slideDown{
+        from{opacity:0; transform: translateY(-40px);}
+        to{opacity:1; transform: translateY(0);}
+    }
+
+    /* ✅ Powerful Footer */
+    footer{
+        background: rgba(0,0,0,0.9);
+        padding: 45px 10%;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+    }
+
+    footer h3{
+        color: #ffcc00;
+        font-size: 21px;
+        margin-bottom: 12px;
+    }
+
+    footer p, footer a{
+        color:#ccc;
+        font-size: 16px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    footer a:hover{
+        color:#ffcc00;
+    }
+
+    footer ul{
+        list-style: none;
+    }
+
+    footer ul li{
+        margin: 8px 0;
+    }
+
+    /* Social Icons */
+    .social-icons img{
+        width: 28px;
+        margin-right: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .social-icons img:hover{
+        transform: scale(1.2);
+    }
+
+    footer input{
+        width:100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+    }
+
+    .subscribe-btn{
+        background: #ffcc00;
+        border:none;
+        width:100%;
+        padding:10px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius:5px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+    .subscribe-btn:hover{
+        background:#e2b100;
+        transform: scale(1.05);
+    }
+
+    .footer-bottom{
+        grid-column: span 4;
+        text-align:center;
+        color:#bbb;
+        font-size:14px;
+        margin-top: 10px;
+    }
+
+    /* ✅ Responsive Fix */
+    @media(max-width:768px){
+        nav ul{ display:none; }
+        .hero h1{ font-size: 32px; }
+    }

@@ -1,0 +1,61 @@
+/* Hide main homepage until animation ends */
+#main-content {
+    display: none;
+}
+
+/* ANIMATION FULLSCREEN */
+#animation-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+/* ⭐ Replace body::before → #animation-screen::before */
+#animation-screen::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, white, black);
+    z-index: 5;
+    opacity: 0;
+
+    animation: fading 8s ease-in-out 1 forwards;
+}
+
+/* original fading effect */
+@keyframes fading {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* text container */
+.container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+/* original text animation */
+.anim-text {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 1%;
+    animation: filling 8s ease-in-out 1 forwards;
+}
+
+/* original fill animation exactly as given */
+@keyframes filling {
+    0% { opacity: 1; color: red; }
+    50% { opacity: 1; color: red; }
+    100% { opacity: 0; color: white; }
+}
